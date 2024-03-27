@@ -1,2 +1,2 @@
-# Aplicacao-de-Clima
- Este é um projeto de aplicação de clima, desenvolvido utilizando HTML, CSS e JavaScript  consumindo API.
+# Aplicação de Clima
+ Este projeto é uma aplicação de clima que consiste em mostrar os dados climáticos da cidade informada através de uma API.
