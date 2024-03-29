@@ -12,6 +12,7 @@ const countryElement = document.querySelector("#country");
 const humidityElement = document.querySelector("#humidity span");
 const windElement = document.querySelector("#wind span");
 const weatherContainer = document.querySelector("#weather-data");
+const loading = document.querySelector(".loading");
 
 //Funções
 const getWeatherData = async(city) => {
@@ -38,18 +39,35 @@ const showWeatherData = async (city) => {
 }
 
 //Eventos
-searchBtn.addEventListener("click", (e)=> {
+searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
+    
     const city = cityInput.value;
     
-    showWeatherData(city);
+    loading.classList.remove("hide");
+    
+    setTimeout(() => {
+            
+        loading.classList.add("hide");
+        
+        showWeatherData(city);
+    
+    },800);
 });
 
 cityInput.addEventListener("keyup",(e) => {
     if(e.code === "Enter"){
+        
         const city = e.target.value;
-
-        showWeatherData(city);
+        
+        loading.classList.remove("hide");
+    
+        setTimeout(() => {
+        
+            loading.classList.add("hide");
+        
+            showWeatherData(city);
+    
+        },800);
     }
 });
