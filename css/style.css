@@ -24,6 +24,7 @@ body{
     color: #fdfdfd;
     border-radius: 1rem;
 }
+
 /*form*/
 .form h3{
     margin-bottom: 1rem;
@@ -54,6 +55,7 @@ body{
 .form button:hover{
     background-color: #74c2ec;
 }
+
 /*Weather-data*/
 #weather-data{
     border-top: 1px solid #fff;
@@ -108,6 +110,12 @@ body{
     margin: 0.6rem;
     padding: 0.6rem;
 }
+
+/*Mensagem de erro*/
+.erro{
+    margin-top: 15px;
+}
+
 /*Animação de loading*/
 .loading{
     width: 20px;

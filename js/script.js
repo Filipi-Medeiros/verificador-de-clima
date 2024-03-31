@@ -12,6 +12,7 @@ const countryElement = document.querySelector("#country");
 const humidityElement = document.querySelector("#humidity span");
 const windElement = document.querySelector("#wind span");
 const weatherContainer = document.querySelector("#weather-data");
+const mensagem = document.querySelector(".erro");
 const loading = document.querySelector(".loading");
 
 //Funções
@@ -39,35 +40,53 @@ const showWeatherData = async (city) => {
 }
 
 //Eventos
-searchBtn.addEventListener("click", (e) => {
+searchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
     
     const city = cityInput.value;
-    
-    loading.classList.remove("hide");
-    
-    setTimeout(() => {
-            
-        loading.classList.add("hide");
-        
-        showWeatherData(city);
-    
-    },800);
-});
+    const data = await getWeatherData(city);
 
-cityInput.addEventListener("keyup",(e) => {
-    if(e.code === "Enter"){
+    if(data.name === undefined){
+        mensagem.classList.remove("hide")
         
-        const city = e.target.value;
+        weatherContainer.classList.add("hide");
+        
+    }else{
+        mensagem.classList.add("hide");
         
         loading.classList.remove("hide");
     
         setTimeout(() => {
-        
             loading.classList.add("hide");
         
             showWeatherData(city);
-    
+        
         },800);
+    }
+});
+
+cityInput.addEventListener("keyup", async (e) => {
+    if(e.code === "Enter"){
+        
+        const city = e.target.value;
+        const data = await getWeatherData(city);
+
+        if(data.name === undefined){
+            mensagem.classList.remove("hide")
+        
+            weatherContainer.classList.add("hide");
+        
+        }else{
+            mensagem.classList.add("hide");
+        
+            loading.classList.remove("hide");
+    
+            setTimeout(() => {
+                loading.classList.add("hide");
+        
+                showWeatherData(city);
+        
+            },800);
+        }
     }
 });
