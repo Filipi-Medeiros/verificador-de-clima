@@ -1,9 +1,7 @@
 //Variáveis e seleção de elementos
 const apikey = "28fc4223e26a40dbdae2c799d4c71464";
-
 const cityInput = document.querySelector("#city-input");
 const searchBtn = document.querySelector("#search");
-
 const cityElement = document.querySelector("#city");
 const tempElement = document.querySelector("#temperature span");
 const descElement = document.querySelector("#description");
@@ -19,7 +17,6 @@ const loading = document.querySelector(".loading");
 const getWeatherData = async(city) => {
 
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}&lang=pt_br`;
-
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
 
@@ -48,19 +45,14 @@ searchBtn.addEventListener("click", async (e) => {
 
     if(data.name === undefined){
         mensagem.classList.remove("hide")
-        
         weatherContainer.classList.add("hide");
-        
     }else{
         mensagem.classList.add("hide");
-        
         loading.classList.remove("hide");
     
         setTimeout(() => {
             loading.classList.add("hide");
-        
             showWeatherData(city);
-        
         },800);
     }
 });
@@ -73,19 +65,14 @@ cityInput.addEventListener("keyup", async (e) => {
 
         if(data.name === undefined){
             mensagem.classList.remove("hide")
-        
             weatherContainer.classList.add("hide");
-        
         }else{
             mensagem.classList.add("hide");
-        
             loading.classList.remove("hide");
     
             setTimeout(() => {
                 loading.classList.add("hide");
-        
                 showWeatherData(city);
-        
             },800);
         }
     }
