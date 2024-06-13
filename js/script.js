@@ -46,6 +46,7 @@ searchBtn.addEventListener("click", async (e) => {
     if(data.name === undefined){
         mensagem.classList.remove("hide")
         weatherContainer.classList.add("hide");
+        console.clear()
     }else{
         mensagem.classList.add("hide");
         loading.classList.remove("hide");
@@ -54,7 +55,7 @@ searchBtn.addEventListener("click", async (e) => {
             loading.classList.add("hide");
             showWeatherData(city);
         },800);
-    }
+    }    
 });
 
 cityInput.addEventListener("keyup", async (e) => {
@@ -66,6 +67,7 @@ cityInput.addEventListener("keyup", async (e) => {
         if(data.name === undefined){
             mensagem.classList.remove("hide")
             weatherContainer.classList.add("hide");
+            console.clear()
         }else{
             mensagem.classList.add("hide");
             loading.classList.remove("hide");
