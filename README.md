@@ -1,2 +1,2 @@
 # Aplicação de Clima
- Este projeto é uma aplicação de clima que consiste em mostrar os dados climáticos da cidade informada através de uma API.
+ Aplicação de clima que usa uma API para trazer os dados climáticos de cidades.
