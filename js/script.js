@@ -46,7 +46,6 @@ searchBtn.addEventListener("click", async (e) => {
     if(data.name === undefined){
         mensagem.classList.remove("hide")
         weatherContainer.classList.add("hide");
-        console.clear()
     }else{
         mensagem.classList.add("hide");
         loading.classList.remove("hide");
@@ -67,7 +66,6 @@ cityInput.addEventListener("keyup", async (e) => {
         if(data.name === undefined){
             mensagem.classList.remove("hide")
             weatherContainer.classList.add("hide");
-            console.clear()
         }else{
             mensagem.classList.add("hide");
             loading.classList.remove("hide");
